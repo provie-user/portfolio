@@ -394,6 +394,7 @@
             position: relative;
             z-index: 2;
             display: block;
+            object-fit: cover;
         }
 
         /* Section Styles */
@@ -472,6 +473,7 @@
             width: 100%;
             height: auto;
             display: block;
+            object-fit: cover;
         }
 
         .about-content h3 {
@@ -1127,10 +1129,15 @@
             
             <div class="hero-image">
                 <div class="hero-image-wrapper">
-                    <!-- Bottom fade overlay applied via CSS ::after pseudo-element -->
-                    <img src="assets/images/profile_portfolio.png" 
+                    <!-- FIXED PATH - Image is in same folder as index.html -->
+                    <img src="profile_portfolio.png" 
                          alt="Profile" 
-                         class="profile-img">
+                         class="profile-img"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <!-- Fallback if image fails to load -->
+                    <div style="display: none; width: 100%; max-width: 450px; height: 500px; background: var(--bg-secondary); border-radius: 20px; align-items: center; justify-content: center; color: var(--text-secondary);">
+                        <i class="fas fa-user" style="font-size: 4rem;"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1149,9 +1156,15 @@
         <div class="about-container">
             <div class="about-image reveal">
                 <div class="about-image-wrapper">
-                    <img src="assets/images/prof.jpg" 
+                    <!-- FIXED PATH - Image is in same folder as index.html -->
+                    <img src="prof.jpg" 
                          alt="About Me" 
-                         class="about-img">
+                         class="about-img"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <!-- Fallback if image fails to load -->
+                    <div style="display: none; width: 100%; height: 400px; background: var(--bg-secondary); border-radius: 20px; align-items: center; justify-content: center; color: var(--text-secondary);">
+                        <i class="fas fa-user" style="font-size: 4rem;"></i>
+                    </div>
                 </div>
             </div>
             
